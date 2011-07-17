@@ -1,0 +1,15 @@
+{% load i18n %}
+<div id="currentCity"><a>{{ current_city.name }}</a></div>
+<div id="otherCities">
+	<div class="closeButton"><span>&nbsp;</span></div>
+	{% regroup other_cities|dictsort:"initial" by initial as initial_list %}
+	{% for initial in initial_list %}
+		<div class="initialGroup">{{ initial.grouper }}:</div>
+		<div class="cityList">
+			{% for city in initial.list %}
+				<span><a href="{% url switch_city_to city.id %}{{ city.slug }}/{% if next %}?next={{ next }}{% endif %}">{{ city.name }}</a></span>
+			{% endfor %}
+		</div>
+	{% endfor %}
+	<div class="moreCities"><a href="{{ select_city_url }}">{% trans 'more cities>>' %}</a></div>
+</div>

@@ -1,0 +1,20 @@
+<div id="selectCityDiv">
+	<div id="currentCountry"><a>{{ current_country.name }}</a></div>
+	<div id="otherCountries">
+		<div class="closeButton"><span>&nbsp;</span></div>
+		{% for country in countries %}
+			<div class="countryName"><a href="{% url switch_country country.code %}">{{ country.name }}</a></div>
+		{% endfor %}
+	</div>
+	{% regroup cities|dictsort:"initial" by initial as initial_list %}
+	{% for initial in initial_list %}
+		<div class="cityGroup">
+			<div class="initialGroup">{{ initial.grouper }}:</div>
+			<div class="cityList">
+				{% for city in initial.list %}
+					<span><a href="{% url switch_city_to city.id %}{{ city.slug }}/{% if next %}?next={{ next }}{% endif %}">{{ city.name }}</a></span>
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+</div>

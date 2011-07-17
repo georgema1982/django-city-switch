@@ -1,0 +1,46 @@
+.ui-no-header .ui-widget-header {
+	display: none;
+}
+
+.ui-no-header .closeButton {
+	height: 20px;
+}
+
+.ui-no-header .closeButton span {
+	float: right;
+	clear: both;
+	background: url(close.png) no-repeat right;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.initialGroup {
+	color: #FF3300;
+	float: left;
+	clear: left;
+	width: 25px;
+}
+
+.cityList {
+	float: left;
+	clear: right;
+}
+
+#otherCities .cityList {
+	width: 245px;
+}
+
+.cityList a {
+	color: #0066FF;
+}
+
+.cityList a:HOVER {
+	color: #FF3300;
+}
+
+.moreCities a {
+	color: #FF3300;
+	float: right;
+}
+
