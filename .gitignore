@@ -1,1 +1,5 @@
 /.pydevproject
+/dist
+/build
+/django_city_switch.egg-info
+/.project

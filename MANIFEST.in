@@ -1,0 +1,3 @@
+include LICENSE
+recursive-include city_switch/media *
+recursive-include city_switch/templates *
