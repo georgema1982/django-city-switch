@@ -24,8 +24,3 @@ function buttonDropdownCombo(button, dialog, width) {
 		dropDown.dialog("close");
 	});
 }
-
-$(function() {
-	buttonDropdownCombo("currentCity", "otherCities");
-	buttonDropdownCombo("currentCountry", "otherCountries", 150);
-});
